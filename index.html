@@ -13,17 +13,17 @@ description: Marc Miao, security researcher and developer building secure system
     <div class="hero-copy">
       <p class="section-index">/01</p>
       <h1>MARC MIAO</h1>
-      <p class="hero-subtitle">SECURITY RESEARCHER · DEVELOPER · BUILDER</p>
-      <p class="hero-text">
+      <p class="hero-subtitle" data-i18n="home.hero.subtitle">SECURITY RESEARCHER · DEVELOPER · BUILDER</p>
+      <p class="hero-text" data-i18n="home.hero.text">
         Security researcher and developer building secure systems, privacy-aware
         products, and hands-on cybersecurity lab writeups.
       </p>
       <div class="hero-actions" aria-label="Primary actions">
-        <a class="button button-dark" href="#work"
+        <a class="button button-dark" href="#work" data-i18n="home.hero.explore"
           >EXPLORE WORK <span aria-hidden="true">↗</span></a
         >
-        <a class="button button-ghost" href="{{ '/blog/' | relative_url }}"
-          >VIEW LABS <span aria-hidden="true">⌗</span></a
+        <a class="button button-ghost" href="{{ '/blog/' | relative_url }}" data-i18n="home.hero.blog"
+          >VIEW BLOG <span aria-hidden="true">⌗</span></a
         >
       </div>
     </div>
@@ -59,7 +59,7 @@ description: Marc Miao, security researcher and developer building secure system
   <section class="principles section-block" id="about">
     <div class="section-label">
       <span class="section-index">/02</span>
-      <strong>CORE FEATURES</strong>
+      <strong data-i18n="home.core.title">CORE FEATURES</strong>
     </div>
     <div class="principle-grid">
       <article>
@@ -68,8 +68,8 @@ description: Marc Miao, security researcher and developer building secure system
           <path d="M10 18 32 31 54 18M32 31v27M20 24v16l12 7 12-7V24"/>
         </svg>
         <div>
-          <h2>SECURE ARCHITECTURE</h2>
-          <p>Threat models. Trust boundaries. Secure defaults.</p>
+          <h2 data-i18n="home.core.secure.title">SECURE ARCHITECTURE</h2>
+          <p data-i18n="home.core.secure.text">Threat models. Trust boundaries. Secure defaults.</p>
         </div>
       </article>
       <article>
@@ -79,8 +79,8 @@ description: Marc Miao, security researcher and developer building secure system
           <path d="M16 16 10 10M48 16l6-6M16 48l-6 6M48 48l6 6"/>
         </svg>
         <div>
-          <h2>PENTEST WORKFLOW</h2>
-          <p>Recon. Enumeration. Exploit notes. Evidence.</p>
+          <h2 data-i18n="home.core.pentest.title">PENTEST WORKFLOW</h2>
+          <p data-i18n="home.core.pentest.text">Recon. Enumeration. Exploit notes. Evidence.</p>
         </div>
       </article>
       <article>
@@ -89,8 +89,8 @@ description: Marc Miao, security researcher and developer building secure system
           <path d="M35 14 29 50"/>
         </svg>
         <div>
-          <h2>FULL-STACK BUILD</h2>
-          <p>Python. React. Node. Docker. Shipping systems.</p>
+          <h2 data-i18n="home.core.build.title">FULL-STACK BUILD</h2>
+          <p data-i18n="home.core.build.text">Python. React. Node. Docker. Shipping systems.</p>
         </div>
       </article>
       <article>
@@ -99,8 +99,8 @@ description: Marc Miao, security researcher and developer building secure system
           <path d="M22 52h20M28 36h8M24 28h18"/>
         </svg>
         <div>
-          <h2>CLOUD SECURITY</h2>
-          <p>AWS. Azure. RBAC. Network defence.</p>
+          <h2 data-i18n="home.core.cloud.title">CLOUD SECURITY</h2>
+          <p data-i18n="home.core.cloud.text">AWS. Azure. RBAC. Network defence.</p>
         </div>
       </article>
       <article>
@@ -109,71 +109,68 @@ description: Marc Miao, security researcher and developer building secure system
           <path d="M46 10v10h8M24 25h20M24 34h20M24 43h12"/>
         </svg>
         <div>
-          <h2>LAB NOTES</h2>
-          <p>CTFs. Writeups. Mistakes. Repeatable methods.</p>
+          <h2 data-i18n="home.core.notes.title">LAB NOTES</h2>
+          <p data-i18n="home.core.notes.text">CTFs. Writeups. Mistakes. Repeatable methods.</p>
         </div>
       </article>
     </div>
   </section>
 
   <section class="work section-block" id="work">
-    <div class="section-label">
-      <span class="section-index">/03</span>
-      <strong>SELECTED WORK</strong>
+    <div class="section-label section-label-spread">
+      <div>
+        <span class="section-index">/03</span>
+        <strong data-i18n="home.projects.title">RECENT PROJECTS</strong>
+      </div>
+      <button class="section-more" type="button" data-project-toggle aria-expanded="false">
+        <span data-project-toggle-label data-i18n="home.projects.more">SEE MORE</span>
+        <span aria-hidden="true">↗</span>
+      </button>
     </div>
     <div class="work-grid">
-      <article class="work-card">
-        <div class="work-image portal" aria-hidden="true"></div>
-        <h2>CYBER_LAB</h2>
-        <p>WRITEUPS / SECURITY NOTES</p>
-        <a href="{{ '/blog/' | relative_url }}" aria-label="Open Cyber Lab"
-          >↗</a
+      {% for project in site.data.projects %}
+        <article
+          class="work-card{% if forloop.index > 4 %} project-extra{% endif %}"
+          tabindex="0"
+          role="button"
+          data-project-card
+          data-title="{{ project.title | escape }}"
+          data-label="{{ project.label | escape }}"
+          data-description="{{ project.description | escape }}"
+          data-time="{{ project.time | escape }}"
+          data-status="{{ project.status | escape }}"
+          data-url="{% if project.url contains '://' %}{{ project.url }}{% else %}{{ project.url | relative_url }}{% endif %}"
+          data-link-label="{{ project.link_label | default: 'VIEW PROJECT' | escape }}"
+          data-image="{% if project.image %}{{ project.image | relative_url }}{% endif %}"
         >
-      </article>
-      <article class="work-card">
-        <div class="work-image neural" aria-hidden="true"></div>
-        <h2>NMAP_ENUM</h2>
-        <p>SERVICE FINGERPRINTING</p>
-        <a
-          href="{{ '/blog/nmap-service-enumeration.html' | relative_url }}"
-          aria-label="Read Nmap enumeration writeup"
-          >↗</a
-        >
-      </article>
-      <article class="work-card">
-        <div class="work-image void" aria-hidden="true"></div>
-        <h2>GITHUB</h2>
-        <p>OPEN SOURCE / PROJECTS</p>
-        <a
-          href="https://github.com/{{ site.github_username }}"
-          aria-label="View GitHub profile"
-          >↗</a
-        >
-      </article>
-      <article class="work-card">
-        <div class="work-image gridline" aria-hidden="true"></div>
-        <h2>AD_ATTACK</h2>
-        <p>IN PROGRESS / COMING SOON</p>
-        <a href="mailto:{{ site.email }}" aria-label="Get notified">↗</a>
-      </article>
+          <div class="work-image {{ project.image_class }}" aria-hidden="true">
+            {% if project.image %}
+              <img src="{{ project.image | relative_url }}" alt="">
+            {% endif %}
+          </div>
+          <h2>{{ project.title }}</h2>
+          <p>{{ project.label }}</p>
+          <a href="{% if project.url contains '://' %}{{ project.url }}{% else %}{{ project.url | relative_url }}{% endif %}" aria-label="Open {{ project.title }}">↗</a>
+        </article>
+      {% endfor %}
     </div>
   </section>
 
   <section class="dashboard section-block">
     <article class="dashboard-panel">
       <span class="section-index">/04</span>
-      <h2>CYBERSECURITY LAB</h2>
-      <p>
+      <h2 data-i18n="home.lab.title">CYBERSECURITY LAB</h2>
+      <p data-i18n="home.lab.text">
         Home lab writeups, CTF notes, Nmap enumeration, web security testing,
         and defensive monitoring experiments.
       </p>
-      <a class="button button-dark" href="{{ '/blog/' | relative_url }}"
+      <a class="button button-dark" href="{{ '/blog/' | relative_url }}" data-i18n="home.lab.button"
         >OPEN LAB <span aria-hidden="true">↗</span></a
       >
     </article>
     <article class="dashboard-panel skill-panel">
       <span class="section-index">/05</span>
-      <h2>SKILL MATRIX</h2>
+      <h2 data-i18n="home.skills.title">SKILL MATRIX</h2>
       <div class="skill-meter">
         <span>PENTEST</span><i style="--value: 86%"></i><strong>86%</strong>
       </div>
@@ -192,8 +189,8 @@ description: Marc Miao, security researcher and developer building secure system
     </article>
     <article class="dashboard-panel" id="contact">
       <span class="section-index">/06</span>
-      <h2>CONTACT ME</h2>
-      <p>Updates on projects, security notes, and experiments from the lab.</p>
+      <h2 data-i18n="home.contact.title">CONTACT ME</h2>
+      <p data-i18n="home.contact.text">Updates on projects, security notes, and experiments from the lab.</p>
       <form
         class="subscribe-form"
         action="mailto:{{ site.email }}"
@@ -201,8 +198,8 @@ description: Marc Miao, security researcher and developer building secure system
         enctype="text/plain"
       >
         <label class="sr-only" for="email">Email</label>
-        <input id="email" name="email" type="email" placeholder="ENTER EMAIL" />
-        <button class="button button-accent" type="submit">
+        <input id="email" name="email" type="email" placeholder="ENTER EMAIL" data-i18n-placeholder="home.contact.placeholder" />
+        <button class="button button-accent" type="submit" data-i18n="home.contact.button">
           SUBSCRIBE <span aria-hidden="true">↗</span>
         </button>
       </form>
@@ -211,7 +208,7 @@ description: Marc Miao, security researcher and developer building secure system
 
   <section class="trusted section-block">
     <div class="trusted-inner">
-      <p class="trusted-eyebrow">OTHER WAYS TO FIND ME</p>
+      <p class="trusted-eyebrow" data-i18n="home.find.title">OTHER WAYS TO FIND ME</p>
       <div class="trusted-logos">
         <a class="logo-item" href="https://github.com/{{ site.github_username }}">
           <svg class="mini-icon" viewBox="0 0 24 24" aria-hidden="true">

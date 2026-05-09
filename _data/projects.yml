@@ -1,0 +1,96 @@
+- title: LIGHT_IDS
+  label: PYTHON / NETWORK DEFENSE
+  description: Lightweight intrusion detection experiment for lab traffic monitoring.
+  url: https://github.com/TheMuses666/Light-IDS
+  link_label: VIEW CODE
+  image_class: neural
+  image: /figures/light-IDS.png
+  status: RECENT
+  time: 2026
+
+- title: WEB_SECURITY_TOOL
+  label: XSS / SQLI / LAB TESTING
+  description: Payload injection and response analysis for controlled web security labs.
+  url: https://github.com/TheMuses666/Web-Security-Testing-Tool-for-XSS-and-SQL-Injection
+  link_label: VIEW CODE
+  image_class: portal
+  image: /figures/web-security-tool.png
+  status: RECENT
+  time: 2026
+
+- title: LUNARSYNC
+  label: TYPESCRIPT / TIME SYSTEMS
+  description: Observatory interface for lunar dates and cross-timezone traditional time analysis.
+  url: https://github.com/TheMuses666/LunarSync
+  link_label: VIEW CODE
+  image_class: void
+  image: /figures/lunarsync.png
+  status: RECENT
+  time: 2026
+
+- title: SMART_CONTRACT_ML
+  label: PUBLISHED RESEARCH / AIP 2026
+  description: Comprehensive investigation of smart contract security via machine learning.
+  url: https://doi.org/10.1063/12.0043526
+  link_label: VIEW PUBLICATION
+  image_class: research
+  image: /figures/smart-contract-research.png
+  status: PUBLISHED
+  time: 2026
+
+- title: CYBER_LAB
+  label: WRITEUPS / SECURITY NOTES
+  description: Home lab notes, enumeration workflows, CTF logs, and defensive experiments.
+  url: /blog/
+  link_label: VIEW LAB
+  image_class: gridline
+  status: ACTIVE
+  time: 2026
+
+- title: NMAP_ENUM
+  label: SERVICE FINGERPRINTING
+  description: Practical workflow from host discovery to version detection and clean notes.
+  url: /blog/nmap-service-enumeration.html
+  link_label: VIEW WRITEUP
+  image_class: portal
+  status: LAB NOTE
+  time: 2026
+
+- title: VEHICLE_PRICE_PREDICTION
+  label: PYTHON / ML
+  description: Prediction experiment for resale pricing and feature-driven model behavior.
+  url: https://github.com/TheMuses666/Vechile-Resale-Price-Prediction
+  link_label: VIEW CODE
+  image_class: neural
+  image: /figures/car-price-predict.png
+  status: PROJECT
+  time: 2025
+
+- title: ROLE_BASED_ACADEMIC_SYSTEM
+  label: PHP / RBAC
+  description: Academic management system structured around role-based permissions.
+  url: https://github.com/TheMuses666/Role-Based-Academic-Management-System-
+  link_label: VIEW CODE
+  image_class: void
+  image: /figures/school-system.png
+  status: PROJECT
+  time: 2025
+
+- title: E_COMMERCE_PLATFORM
+  label: HTML / FRONTEND
+  description: Front-end commerce interface and product flow prototype.
+  url: https://github.com/TheMuses666/E-commerce-platform
+  link_label: VIEW CODE
+  image_class: gridline
+  image: /figures/E-commercial.png
+  status: PROJECT
+  time: 2025
+
+- title: THIS_SITE
+  label: JEKYLL / PORTFOLIO
+  description: Cyber brutalist personal homepage and cybersecurity lab archive.
+  url: https://github.com/TheMuses666/TheMuses666.github.io
+  link_label: VIEW SITE CODE
+  image_class: research
+  status: ACTIVE
+  time: 2026

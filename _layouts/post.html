@@ -4,16 +4,30 @@ layout: default
 
 <main class="article-shell section-block">
   <article class="article">
-    <a class="back-link" href="{{ '/blog/' | relative_url }}">Back to lab archive</a>
-    <p class="section-index">{{ page.section_index }}</p>
-    <h1>{{ page.title }}</h1>
-    {% if page.subtitle %}
-      <p class="hero-subtitle">{{ page.subtitle }}</p>
-    {% endif %}
-    {% if page.excerpt_text %}
-      <p class="hero-text">{{ page.excerpt_text }}</p>
-    {% endif %}
 
-    {{ content }}
+    <div class="article-header">
+      <a class="back-link" href="{{ '/blog/' | relative_url }}">← BACK TO LAB</a>
+      <div class="post-meta">
+        <span class="post-date">{{ page.date | date: "%Y-%m-%d" }}</span>
+        {% if page.category_label %}
+          <span class="post-tag">{{ page.category_label }}</span>
+        {% endif %}
+        <span class="post-read">~{{ content | number_of_words | divided_by: 200 | plus: 1 }} MIN READ</span>
+      </div>
+      <p class="section-index">{{ page.section_index }}</p>
+      <h1>{{ page.title }}</h1>
+      {% if page.subtitle %}
+        <p class="hero-subtitle">{{ page.subtitle }}</p>
+      {% endif %}
+      {% if page.excerpt_text %}
+        <p class="hero-text">{{ page.excerpt_text }}</p>
+      {% endif %}
+      <div class="article-header-rule"></div>
+    </div>
+
+    <div class="article-body">
+      {{ content }}
+    </div>
+
   </article>
 </main>

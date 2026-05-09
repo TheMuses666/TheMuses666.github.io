@@ -1,0 +1,54 @@
+---
+layout: default
+title: Projects | Marc Miao
+description: All projects, research, cybersecurity lab work, and software experiments by Marc Miao.
+permalink: /projects/
+---
+
+<main>
+  <section class="hero blog-hero section-block">
+    <div class="hero-copy">
+      <p class="section-index">/PROJECTS</p>
+      <h1 data-i18n="projects.hero.title">Projects, research, and lab systems.</h1>
+      <p class="hero-subtitle" data-i18n="projects.hero.subtitle">SECURITY. SOFTWARE. RESEARCH.</p>
+      <p class="hero-text" data-i18n="projects.hero.text">
+        A curated archive of cybersecurity lab work, published research, web
+        security tooling, machine learning experiments, and software builds.
+      </p>
+    </div>
+  </section>
+
+  <section class="work section-block">
+    <div class="section-label">
+      <span class="section-index">/ALL</span>
+      <strong data-i18n="projects.all">ALL PROJECTS</strong>
+    </div>
+    <div class="work-grid all-projects-grid">
+      {% for project in site.data.projects %}
+        <article
+          class="work-card"
+          tabindex="0"
+          role="button"
+          data-project-card
+          data-title="{{ project.title | escape }}"
+          data-label="{{ project.label | escape }}"
+          data-description="{{ project.description | escape }}"
+          data-time="{{ project.time | escape }}"
+          data-status="{{ project.status | escape }}"
+          data-url="{% if project.url contains '://' %}{{ project.url }}{% else %}{{ project.url | relative_url }}{% endif %}"
+          data-link-label="{{ project.link_label | default: 'VIEW PROJECT' | escape }}"
+          data-image="{% if project.image %}{{ project.image | relative_url }}{% endif %}"
+        >
+          <div class="work-image {{ project.image_class }}" aria-hidden="true">
+            {% if project.image %}
+              <img src="{{ project.image | relative_url }}" alt="">
+            {% endif %}
+          </div>
+          <h2>{{ project.title }}</h2>
+          <p>{{ project.label }}</p>
+          <a href="{% if project.url contains '://' %}{{ project.url }}{% else %}{{ project.url | relative_url }}{% endif %}" aria-label="Open {{ project.title }}">↗</a>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+</main>

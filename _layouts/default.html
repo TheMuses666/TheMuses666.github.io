@@ -14,18 +14,18 @@
         CYBR_MARC
       </a>
       <nav class="nav" aria-label="Primary navigation">
-        <a href="{{ '/#work' | relative_url }}">WORK</a>
+        <a href="{{ '/#work' | relative_url }}" data-i18n="nav.work">WORK</a>
         <span aria-hidden="true">/</span>
-        <a href="{{ '/#about' | relative_url }}">ABOUT</a>
+        <a href="{{ '/#about' | relative_url }}" data-i18n="nav.about">ABOUT</a>
         <span aria-hidden="true">/</span>
-        <a href="{{ '/blog/' | relative_url }}">LABS</a>
+        <a href="{{ '/blog/' | relative_url }}" data-i18n="nav.blog">BLOG</a>
         <span aria-hidden="true">/</span>
-        <a href="{{ '/#contact' | relative_url }}">CONTACT</a>
+        <a href="{{ '/#contact' | relative_url }}" data-i18n="nav.contact">CONTACT</a>
       </nav>
       <div class="language-toggle" aria-label="Language switcher">
-        <button class="active" type="button">EN</button>
+        <button class="active" type="button" data-lang-option="en" aria-pressed="true">EN</button>
         <span aria-hidden="true">/</span>
-        <button type="button">中文</button>
+        <button type="button" data-lang-option="zh" aria-pressed="false">中文</button>
       </div>
     </header>
 
@@ -41,26 +41,26 @@
           <p class="footer-copy">© 2026 MARC MIAO<br>ALL RIGHTS RESERVED.</p>
         </div>
         <div class="footer-col">
-          <strong>NAVIGATION</strong>
-          <a href="{{ '/#work' | relative_url }}">Work</a>
-          <a href="{{ '/#about' | relative_url }}">About</a>
-          <a href="{{ '/blog/' | relative_url }}">Labs</a>
-          <a href="{{ '/#contact' | relative_url }}">Contact</a>
+          <strong data-i18n="footer.navigation">NAVIGATION</strong>
+          <a href="{{ '/#work' | relative_url }}" data-i18n="nav.work">Work</a>
+          <a href="{{ '/#about' | relative_url }}" data-i18n="nav.about">About</a>
+          <a href="{{ '/blog/' | relative_url }}" data-i18n="nav.blog">Blog</a>
+          <a href="{{ '/#contact' | relative_url }}" data-i18n="nav.contact">Contact</a>
         </div>
         <div class="footer-col">
-          <strong>RESOURCES</strong>
-          <a href="{{ '/blog/' | relative_url }}">Blog</a>
+          <strong data-i18n="footer.resources">RESOURCES</strong>
+          <a href="{{ '/blog/' | relative_url }}" data-i18n="nav.blog">Blog</a>
           <a href="{{ '/blog/nmap-service-enumeration.html' | relative_url }}">Nmap Enum</a>
           <a href="https://github.com/{{ site.github_username }}">GitHub</a>
         </div>
         <div class="footer-col">
-          <strong>SOCIALS</strong>
+          <strong data-i18n="footer.socials">SOCIALS</strong>
           <a href="https://github.com/{{ site.github_username }}">GitHub</a>
           <a href="{{ site.linkedin_url }}">LinkedIn</a>
           <a href="mailto:{{ site.email }}">Email</a>
         </div>
         <div class="footer-col footer-node-col">
-          <strong>GLOBAL NODE</strong>
+          <strong data-i18n="footer.node">GLOBAL NODE</strong>
           <div class="node-map" aria-hidden="true">
             <svg viewBox="0 0 180 80" width="180" height="80" xmlns="http://www.w3.org/2000/svg">
               <defs>
@@ -87,17 +87,255 @@
     <div class="status-bar" role="status">
       <span class="status-left">● CONNECTION SECURE</span>
       <span class="status-ticker" aria-hidden="true">
-        <span>SYS: ONLINE</span>
+        <span data-i18n="status.sys">SYS: ONLINE</span>
         <span>·</span>
-        <span>NODE: LON_01</span>
+        <span data-i18n="status.node">NODE: LON_01</span>
         <span>·</span>
         <span>PING: 12ms</span>
         <span>·</span>
-        <span>UPTIME: 99.9%</span>
+        <span data-i18n="status.uptime">UPTIME: 99.9%</span>
         <span>·</span>
-        <span>CYBR_MARC // SECURITY RESEARCHER</span>
+        <span data-i18n="status.role">CYBR_MARC // SECURITY RESEARCHER</span>
       </span>
-      <span class="status-right">ACCESS GRANTED ●</span>
+      <span class="status-right" data-i18n="status.access">ACCESS GRANTED ●</span>
     </div>
+
+    <div class="project-modal" data-project-modal hidden>
+      <div class="project-modal-backdrop" data-project-close></div>
+      <section class="project-modal-panel" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+        <button class="project-modal-close" type="button" data-project-close aria-label="Close project details">×</button>
+        <p class="section-index" data-project-status>/PROJECT</p>
+        <h2 id="project-modal-title" data-project-title></h2>
+        <figure class="project-modal-figure" data-project-figure hidden>
+          <img src="" alt="" data-project-image>
+        </figure>
+        <dl class="project-meta">
+          <div>
+            <dt data-i18n="modal.type">TYPE</dt>
+            <dd data-project-label></dd>
+          </div>
+          <div>
+            <dt data-i18n="modal.time">TIME</dt>
+            <dd data-project-time></dd>
+          </div>
+        </dl>
+        <p class="project-modal-description" data-project-description></p>
+        <a class="button button-dark project-modal-link" href="#" data-project-link>OPEN LINK <span aria-hidden="true">↗</span></a>
+      </section>
+    </div>
+
+    <script>
+      const translations = {
+        en: {
+          "nav.work": "WORK",
+          "nav.about": "ABOUT",
+          "nav.blog": "BLOG",
+          "nav.contact": "CONTACT",
+          "footer.navigation": "NAVIGATION",
+          "footer.resources": "RESOURCES",
+          "footer.socials": "SOCIALS",
+          "footer.node": "GLOBAL NODE",
+          "status.sys": "SYS: ONLINE",
+          "status.node": "NODE: LON_01",
+          "status.uptime": "UPTIME: 99.9%",
+          "status.role": "CYBR_MARC // SECURITY RESEARCHER",
+          "status.access": "ACCESS GRANTED ●",
+          "modal.type": "TYPE",
+          "modal.time": "TIME",
+          "home.hero.subtitle": "SECURITY RESEARCHER · DEVELOPER · BUILDER",
+          "home.hero.text": "Security researcher and developer building secure systems, privacy-aware products, and hands-on cybersecurity lab writeups.",
+          "home.hero.explore": "EXPLORE WORK ↗",
+          "home.hero.blog": "VIEW BLOG ⌗",
+          "home.core.title": "CORE FEATURES",
+          "home.core.secure.title": "SECURE ARCHITECTURE",
+          "home.core.secure.text": "Threat models. Trust boundaries. Secure defaults.",
+          "home.core.pentest.title": "PENTEST WORKFLOW",
+          "home.core.pentest.text": "Recon. Enumeration. Exploit notes. Evidence.",
+          "home.core.build.title": "FULL-STACK BUILD",
+          "home.core.build.text": "Python. React. Node. Docker. Shipping systems.",
+          "home.core.cloud.title": "CLOUD SECURITY",
+          "home.core.cloud.text": "AWS. Azure. RBAC. Network defence.",
+          "home.core.notes.title": "LAB NOTES",
+          "home.core.notes.text": "CTFs. Writeups. Mistakes. Repeatable methods.",
+          "home.projects.title": "RECENT PROJECTS",
+          "home.projects.more": "SEE MORE",
+          "home.projects.less": "SHOW LESS",
+          "home.lab.title": "CYBERSECURITY LAB",
+          "home.lab.text": "Home lab writeups, CTF notes, Nmap enumeration, web security testing, and defensive monitoring experiments.",
+          "home.lab.button": "OPEN LAB ↗",
+          "home.skills.title": "SKILL MATRIX",
+          "home.contact.title": "CONTACT ME",
+          "home.contact.text": "Updates on projects, security notes, and experiments from the lab.",
+          "home.contact.placeholder": "ENTER EMAIL",
+          "home.contact.button": "SUBSCRIBE ↗",
+          "home.find.title": "OTHER WAYS TO FIND ME",
+          "blog.hero.title": "Hands-on notes from security experiments.",
+          "blog.hero.subtitle": "ENUMERATION. DEFENSE. EXPLOITATION.",
+          "blog.hero.text": "Home lab setup, network isolation, enumeration, exploitation, defensive monitoring, Active Directory practice, and cloud security.",
+          "blog.writeups": "LAB WRITEUPS",
+          "projects.hero.title": "Projects, research, and lab systems.",
+          "projects.hero.subtitle": "SECURITY. SOFTWARE. RESEARCH.",
+          "projects.hero.text": "A curated archive of cybersecurity lab work, published research, web security tooling, machine learning experiments, and software builds.",
+          "projects.all": "ALL PROJECTS"
+        },
+        zh: {
+          "nav.work": "项目",
+          "nav.about": "关于",
+          "nav.blog": "博客",
+          "nav.contact": "联系",
+          "footer.navigation": "导航",
+          "footer.resources": "资源",
+          "footer.socials": "社交",
+          "footer.node": "全球节点",
+          "status.sys": "系统：在线",
+          "status.node": "节点：伦敦_01",
+          "status.uptime": "运行时间：99.9%",
+          "status.role": "CYBR_MARC // 安全研究者",
+          "status.access": "访问已授权 ●",
+          "modal.type": "类型",
+          "modal.time": "时间",
+          "home.hero.subtitle": "安全研究者 · 开发者 · 构建者",
+          "home.hero.text": "我关注安全系统、隐私友好型产品和网络安全实验室记录，持续把研究、开发和实践连接起来。",
+          "home.hero.explore": "查看项目 ↗",
+          "home.hero.blog": "查看博客 ⌗",
+          "home.core.title": "核心能力",
+          "home.core.secure.title": "安全架构",
+          "home.core.secure.text": "威胁建模。信任边界。安全默认值。",
+          "home.core.pentest.title": "渗透测试流程",
+          "home.core.pentest.text": "侦察。枚举。利用记录。证据整理。",
+          "home.core.build.title": "全栈构建",
+          "home.core.build.text": "Python。React。Node。Docker。交付系统。",
+          "home.core.cloud.title": "云安全",
+          "home.core.cloud.text": "AWS。Azure。RBAC。网络防御。",
+          "home.core.notes.title": "实验室笔记",
+          "home.core.notes.text": "CTF。Writeup。错误复盘。可复用方法。",
+          "home.projects.title": "最近项目",
+          "home.projects.more": "查看更多",
+          "home.projects.less": "收起",
+          "home.lab.title": "网络安全实验室",
+          "home.lab.text": "记录 home lab、CTF、Nmap 枚举、Web 安全测试和防御监控实验。",
+          "home.lab.button": "打开博客 ↗",
+          "home.skills.title": "技能矩阵",
+          "home.contact.title": "联系我",
+          "home.contact.text": "项目、安全笔记和实验室更新。",
+          "home.contact.placeholder": "输入邮箱",
+          "home.contact.button": "订阅 ↗",
+          "home.find.title": "其他联系方式",
+          "blog.hero.title": "网络安全实验记录",
+          "blog.hero.subtitle": "枚举。防御。利用分析。",
+          "blog.hero.text": "记录 home lab 搭建、网络隔离、服务枚举、漏洞利用、防御监控、Active Directory 实验和云安全学习。",
+          "blog.writeups": "实验室文章",
+          "projects.hero.title": "项目、研究与实验系统",
+          "projects.hero.subtitle": "安全。软件。研究。",
+          "projects.hero.text": "这里收集了网络安全实验、发表研究、Web 安全工具、机器学习实验和软件项目。",
+          "projects.all": "全部项目"
+        }
+      };
+
+      let currentLang = localStorage.getItem("site-lang") || "en";
+
+      const translate = (key) => translations[currentLang]?.[key] || translations.en[key] || "";
+
+      const applyLanguage = (lang) => {
+        currentLang = lang;
+        localStorage.setItem("site-lang", lang);
+        document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+
+        document.querySelectorAll("[data-i18n]").forEach((element) => {
+          element.textContent = translate(element.dataset.i18n);
+        });
+
+        document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+          element.setAttribute("placeholder", translate(element.dataset.i18nPlaceholder));
+        });
+
+        document.querySelectorAll("[data-lang-option]").forEach((button) => {
+          const isActive = button.dataset.langOption === lang;
+          button.classList.toggle("active", isActive);
+          button.setAttribute("aria-pressed", String(isActive));
+        });
+
+        const projectToggleLabel = document.querySelector("[data-project-toggle-label]");
+        if (projectToggleLabel) {
+          const expanded = document.querySelector("[data-project-toggle]")?.getAttribute("aria-expanded") === "true";
+          projectToggleLabel.textContent = translate(expanded ? "home.projects.less" : "home.projects.more");
+        }
+      };
+
+      document.querySelectorAll("[data-lang-option]").forEach((button) => {
+        button.addEventListener("click", () => applyLanguage(button.dataset.langOption));
+      });
+
+      const projectToggle = document.querySelector("[data-project-toggle]");
+      const projectGrid = projectToggle?.closest(".work")?.querySelector(".work-grid");
+
+      projectToggle?.addEventListener("click", () => {
+        const isExpanded = projectGrid.classList.toggle("is-expanded");
+        projectToggle.setAttribute("aria-expanded", String(isExpanded));
+        projectToggle.querySelector("[data-project-toggle-label]").textContent = translate(isExpanded ? "home.projects.less" : "home.projects.more");
+      });
+
+      const projectModal = document.querySelector("[data-project-modal]");
+      const projectCards = document.querySelectorAll("[data-project-card]");
+      const modalTitle = projectModal?.querySelector("[data-project-title]");
+      const modalLabel = projectModal?.querySelector("[data-project-label]");
+      const modalTime = projectModal?.querySelector("[data-project-time]");
+      const modalStatus = projectModal?.querySelector("[data-project-status]");
+      const modalDescription = projectModal?.querySelector("[data-project-description]");
+      const modalLink = projectModal?.querySelector("[data-project-link]");
+      const modalFigure = projectModal?.querySelector("[data-project-figure]");
+      const modalImage = projectModal?.querySelector("[data-project-image]");
+
+      const openProjectModal = (card) => {
+        modalTitle.textContent = card.dataset.title;
+        modalLabel.textContent = card.dataset.label;
+        modalTime.textContent = card.dataset.time;
+        modalStatus.textContent = `/${card.dataset.status}`;
+        modalDescription.textContent = card.dataset.description;
+        modalLink.href = card.dataset.url;
+        modalLink.textContent = `${card.dataset.linkLabel} ↗`;
+        if (card.dataset.image) {
+          modalImage.src = card.dataset.image;
+          modalImage.alt = `${card.dataset.title} preview`;
+          modalFigure.hidden = false;
+        } else {
+          modalImage.removeAttribute("src");
+          modalImage.alt = "";
+          modalFigure.hidden = true;
+        }
+        projectModal.hidden = false;
+        document.body.classList.add("modal-open");
+        projectModal.querySelector("[data-project-close]").focus();
+      };
+
+      const closeProjectModal = () => {
+        if (!projectModal || projectModal.hidden) return;
+        projectModal.hidden = true;
+        document.body.classList.remove("modal-open");
+      };
+
+      projectCards.forEach((card) => {
+        card.addEventListener("click", (event) => {
+          if (event.target.closest("a")) return;
+          openProjectModal(card);
+        });
+        card.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openProjectModal(card);
+          }
+        });
+      });
+
+      projectModal?.querySelectorAll("[data-project-close]").forEach((element) => {
+        element.addEventListener("click", closeProjectModal);
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeProjectModal();
+      });
+
+      applyLanguage(currentLang);
+    </script>
   </body>
 </html>
