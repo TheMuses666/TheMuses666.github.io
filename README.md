@@ -4,6 +4,9 @@
 
 MSc Information Security @ UCL (2026) · Based in London
 
+This repository powers my personal GitHub Pages site: a portfolio for projects
+and a cybersecurity lab blog for writeups, notes, and build logs.
+
 ---
 
 ## About
@@ -61,7 +64,7 @@ Topics include:
 
 ## Connect
 
-- 💼 [LinkedIn](www.linkedin.com/in/marc-m-132737336)
+- 💼 [LinkedIn](https://www.linkedin.com/in/marc-m-132737336)
 - 📧 [Email](myl520667@gmail.com)
 - 🐙 [GitHub](https://github.com/TheMuses666)
 
