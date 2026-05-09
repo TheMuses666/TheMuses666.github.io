@@ -1,0 +1,23 @@
+title: Marc Miao | Cybersecurity Lab
+description: Security research, projects, and cybersecurity lab writeups by Marc Miao.
+url: "https://themuses666.github.io"
+baseurl: ""
+email: myl520667@gmail.com
+github_username: TheMuses666
+linkedin_url: https://www.linkedin.com/in/marc-m-132737336
+
+permalink: /blog/:slug.html
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      section_index: /LAB
+      image_class: portal
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor

@@ -4,8 +4,8 @@
 
 MSc Information Security @ UCL (2026) · Based in London
 
-This repository powers my personal GitHub Pages site: a portfolio for projects
-and a cybersecurity lab blog for writeups, notes, and build logs.
+This repository powers my Jekyll-based GitHub Pages site: a portfolio for
+projects and a cybersecurity lab blog for writeups, notes, and build logs.
 
 ---
 
@@ -41,6 +41,16 @@ Topics include:
 - Active Directory attack simulations
 - Web application security (OWASP Top 10)
 - Cloud security on AWS / Azure
+
+### Local Jekyll Preview
+
+```bash
+bundle install --path vendor/bundle
+bundle exec jekyll serve
+```
+
+Add new lab posts in `_posts/` using the `YYYY-MM-DD-title.md` format. Jekyll
+will publish them automatically under `/blog/`.
 
 ---
 

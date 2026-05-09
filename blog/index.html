@@ -1,73 +1,49 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Cybersecurity lab notes, writeups, and security research by Marc Miao.">
-    <title>Cybersecurity Lab | Marc Miao</title>
-    <link rel="stylesheet" href="../styles.css">
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="../index.html">Marc Miao</a>
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="../index.html#work">Work</a>
-        <a href="index.html">Cybersecurity Lab</a>
-        <a href="../index.html#contact">Contact</a>
-      </nav>
-    </header>
+---
+layout: default
+title: Cybersecurity Lab | Marc Miao
+description: Cybersecurity lab notes, writeups, and security research by Marc Miao.
+permalink: /blog/
+---
 
-    <main>
-      <section class="hero blog-hero section-block">
-        <div class="hero-copy">
-          <p class="section-index">/LABS</p>
-          <h1>Hands-on notes from security experiments.</h1>
-          <p class="hero-subtitle">ENUMERATION. DEFENSE. EXPLOITATION.</p>
-          <p class="hero-text">
-            Home lab setup, network isolation, enumeration, exploitation,
-            defensive monitoring, Active Directory practice, and cloud security.
-          </p>
-        </div>
-      </section>
+<main>
+  <section class="hero blog-hero section-block">
+    <div class="hero-copy">
+      <p class="section-index">/LABS</p>
+      <h1>Hands-on notes from security experiments.</h1>
+      <p class="hero-subtitle">ENUMERATION. DEFENSE. EXPLOITATION.</p>
+      <p class="hero-text">
+        Home lab setup, network isolation, enumeration, exploitation,
+        defensive monitoring, Active Directory practice, and cloud security.
+      </p>
+    </div>
+  </section>
 
-      <section class="work section-block">
-        <div class="section-label">
-          <span class="section-index">/01</span>
-          <strong>LAB WRITEUPS</strong>
-        </div>
-        <div class="work-grid">
-          <article class="work-card">
-            <div class="work-image portal" aria-hidden="true"></div>
-            <h2>NMAP_ENUM</h2>
-            <p>SERVICE FINGERPRINTING</p>
-            <a href="nmap-service-enumeration.html" aria-label="Read Nmap service enumeration checklist">↗</a>
-          </article>
-          <article class="work-card">
-            <div class="work-image void" aria-hidden="true"></div>
-            <h2>NETWORK_ISOLATION</h2>
-            <p>COMING SOON / LAB DESIGN</p>
-            <a href="mailto:myl520667@gmail.com" aria-label="Suggest network isolation topic">↗</a>
-          </article>
-          <article class="work-card">
-            <div class="work-image gridline" aria-hidden="true"></div>
-            <h2>BURP_FLOW</h2>
-            <p>COMING SOON / WEB SECURITY</p>
-            <a href="mailto:myl520667@gmail.com" aria-label="Suggest Burp Suite topic">↗</a>
-          </article>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div>
-        <strong>Marc Miao</strong>
-        <p>Security research notes and build logs.</p>
-      </div>
-      <div class="footer-links">
-        <a href="../index.html">Home</a>
-        <a href="mailto:myl520667@gmail.com">Email</a>
-        <a href="https://github.com/TheMuses666">GitHub</a>
-      </div>
-    </footer>
-  </body>
-</html>
+  <section class="work section-block">
+    <div class="section-label">
+      <span class="section-index">/01</span>
+      <strong>LAB WRITEUPS</strong>
+    </div>
+    <div class="work-grid">
+      {% for post in site.posts %}
+        <article class="work-card">
+          <div class="work-image {{ post.image_class | default: 'portal' }}" aria-hidden="true"></div>
+          <h2>{{ post.slug | upcase | replace: '-', '_' }}</h2>
+          <p>{{ post.category_label | default: post.subtitle }}</p>
+          <a href="{{ post.url | relative_url }}" aria-label="Read {{ post.title }}">↗</a>
+        </article>
+      {% endfor %}
+      <article class="work-card">
+        <div class="work-image void" aria-hidden="true"></div>
+        <h2>NETWORK_ISOLATION</h2>
+        <p>COMING SOON / LAB DESIGN</p>
+        <a href="mailto:{{ site.email }}" aria-label="Suggest network isolation topic">↗</a>
+      </article>
+      <article class="work-card">
+        <div class="work-image gridline" aria-hidden="true"></div>
+        <h2>BURP_FLOW</h2>
+        <p>COMING SOON / WEB SECURITY</p>
+        <a href="mailto:{{ site.email }}" aria-label="Suggest Burp Suite topic">↗</a>
+      </article>
+    </div>
+  </section>
+</main>
