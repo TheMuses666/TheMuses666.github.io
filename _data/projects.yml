@@ -1,7 +1,7 @@
 - title: LIGHT_IDS
   label: PYTHON / NETWORK DEFENSE
   description: Lightweight intrusion detection experiment for lab traffic monitoring.
-  url: https://github.com/TheMuses666/Light-IDS
+  url: https://github.com/MYL-666/Light-IDS
   link_label: VIEW CODE
   image_class: neural
   image: /figures/light-IDS.png
@@ -11,7 +11,7 @@
 - title: WEB_SECURITY_TOOL
   label: XSS / SQLI / LAB TESTING
   description: Payload injection and response analysis for controlled web security labs.
-  url: https://github.com/TheMuses666/Web-Security-Testing-Tool-for-XSS-and-SQL-Injection
+  url: https://github.com/MYL-666/Web-Security-Testing-Tool-for-XSS-and-SQL-Injection
   link_label: VIEW CODE
   image_class: portal
   image: /figures/web-security-tool.png
@@ -21,8 +21,8 @@
 - title: LUNARSYNC
   label: TYPESCRIPT / TIME SYSTEMS
   description: Observatory interface for lunar dates and cross-timezone traditional time analysis.
-  url: https://github.com/TheMuses666/LunarSync
-  link_label: VIEW CODE
+  url: https://lunar-sync-jade.vercel.app/
+  link_label: VIEW Website
   image_class: void
   image: /figures/lunarsync.png
   status: RECENT
@@ -31,7 +31,7 @@
 - title: SMART_CONTRACT_ML
   label: PUBLISHED RESEARCH / AIP 2026
   description: Comprehensive investigation of smart contract security via machine learning.
-  url: https://doi.org/10.1063/12.0043526
+  url: https://pubs.aip.org/aip/acp/article-abstract/3480/1/850001/3386349/The-comprehensive-investigation-of-smart-contract
   link_label: VIEW PUBLICATION
   image_class: research
   image: /figures/smart-contract-research.png
@@ -69,7 +69,7 @@
 - title: ROLE_BASED_ACADEMIC_SYSTEM
   label: PHP / RBAC
   description: Academic management system structured around role-based permissions.
-  url: https://github.com/TheMuses666/Role-Based-Academic-Management-System-
+  url: https://github.com/MYL-666/Role-Based-Academic-Management-System-
   link_label: VIEW CODE
   image_class: void
   image: /figures/school-system.png
